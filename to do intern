@@ -1,0 +1,158 @@
+MENACES INTERNES SERIEUSES
+
+#DONE
+si1-01 Commandos -> arrive zone rouge bas / ACT_R / Riposte V2 V2
+X-> change de niveau de pont
+Y-> si touche, se deplace a droite. sinon, inflige 2 degats.
+Z-> Inflige 4 degats. Les joueurs dans cette station sont assommes.
+
+#DONE
+si1-02 Commandos -> arrive zone bleu haut / ACT_R / Riposte V2 V2
+X-> change de niveau de pont
+Y-> si touche, se deplace a gauche. sinon, inflige 2 degats.
+Z-> Inflige 4 degats. Les joueurs dans cette station sont assommes.
+
+#DONE
+si1-03 Alien -> arrive zone blanche bas  / ACT_R / Riposte si grandit (sinon non) V2 V2
+X-> grandit
+Y->  change de niveau de pont & inflige 1 degat par joueur present dans cette nouvelle station
+Z-> s empare du vaisseau
+
+
+//a faire en dernier apres les vaisseaux
+si1-04 Fissure -> arrive zone rouge haut  / ACT_R & C (vaisseau reparent la fissure et attaquent pas les vaisseaux)
+-> V2 V2
+X-> tant que fissure, degat sur la zone double
+Y-> tant que fissure, degat sur le vaisseau double
+Z-> le vaisseau part en piece detachee
+
+#DONE
+si1-05 Courts-Circuits -> arrive zone blanche haut  / ACT_B / V3 V4
+X-> l energie du reacteur central est transferee au bouclier, le sruplus se volatilise (1 degat par surplu)
+Y-> l energie du reacteur se volatilise (1 degat par energie qui se volatilise)
+Z-> l energie de tous les reacteurs se volatilise (1 degat par surplu) (respectivement par zone).
+
+#DONE
+si1-06 revolte des robots de combat -> arrive zone bleu haut & rouge bas / ACT_C / V2 V4
+-->si les actions C sont realises dans le meme tour dans les 2 stations elles infligent 1 degat de plus a cette menace.
+X-> tous les joueurs dirigeants des robots de combats actifs sont assommes
+Y-> tous les joueurs de ces stations sont assommes
+Z-> tous les joueurs qui ne sont pas sur la passerelle sont assommes
+
+
+MENACES INTERNES SERIEUSES
+
+#DONE
+si2-01 EXECUTEUR Arrive en bleu haut / ACT_R / riposte / V2 V2
+->assomme tous les joueurs qu il croise s ils ne dirigent pas des robots de combat actifs.
+X->se deplace a gauche
+Y->change de niveau de pont
+Z->inflige 3 degats
+
+si2-02 Droide FURETEUR Arrive en blanche haut / ACT_R / V2 V2
+->Le joueur qui le detruit est assomme
+X->se deplace vers la station adjacente avec le plus de joueurs (ne bouge pas si egalite);
+Y->se deplace vers la station adjacente avec le plus de joueurs (ne bouge pas si egalite);
+Z->inflige 5 degats / assomme tous les joueurs dans sa station
+
+#DONE
+si2-03 surcharge des generateurs Arrive en blanche bas rouge bas bleu bas / ACT_B / V3 V7
+->si actions B dans le meme tour sur les trois reacteurs -> +2 degats
+X->consume 2 blocs d energie du reacteur central
+Y->consume 1 blocs d energie de chaque reacteur
+Z->inflige 3 degats a chaque zone
+
+si2-04 Contamination Arrive en rouge haut rouge bas bleu bas bleu haut / ACT_R / V2 V3
+->la decontamination doit etre effectuee dans 3 des 4 stations
+X->les joueurs sont retardes dans chaque station non decontaminees
+Y->inflige 1 degats a chaque station non decontaminees
+Z->les joueurs dans les zones non decontaminees sont assommes
+
+<<<<<<< HEAD
+#DONE
+=======
+>>>>>>> c85232f8452bc2dfc11cffeb75bc6af15b2f832d
+si2-05 Engin nucleaires Arrive en blanche bas / ACT_C / V4 V1
+->3 joueurs doivent effectuer l action C en meme temps
+X-> +1 vitesse
+Y-> +1 vitesse
+Z-> detruit le vaisseau
+
+
+MENACES INTERNES COMMUNES #donec
+
+i1-01 Eclaireurs zone rouge bas / ACT_R / riposte / V1 V3
+X->se deplace a droite
+Y->change de pont
+Z->attaque 3 degats
+
+i1-02 Eclaireurs zone bleu haut / ACT_R / riposte / V1 V3
+X->se deplace a gauche
+Y->change de pont
+Z->attaque 3 degats
+
+i1-03 Saboteur zone blanche bas / ACT_R / V4 V1
+X->se deplace a droite
+Y->consume 1 energie du reacteur, si impossible, attaque 1
+Z->attaque 2
+
+i1-04 Saboteur zone blanche bas / ACT_R / V4 V1
+X->se deplace a gauche
+Y->consume 1 energie du reacteur, si impossible, attaque 1
+Z->attaque 2
+
+i1-05 Piratage des boucliers zone bleu haut / ACT_B / V2 V3
+X->draine toute l energie du bouclier
+Y->draine toute l energie de la zone bleu
+Z->attaque 2 degats
+
+i1-06 Piratage des boucliers zone rouge haut / ACT_B / V2 V3
+X->draine toute l energie du bouclier
+Y->draine toute l energie de la zone rouge
+Z->attaque 2 degats
+
+i1-07 tetes nucleaires instables zone bleu bas / ACT_C / V3 ?\
+--> a un point de vie par roquette sur le vaisseau lors de son apparition
+-->si pas de roquette, la menace est directement detruite
+-->on ne peut lancer de roquette tant qu il est pas detruit
+Z->chaque roquette non reparee inflige 3 degats
+
+MENACES INTERNES COMMUNES AVANCEES
+
+i2-01 Slime zone bleu bas / ACT_R / V2 V2
+--> tant qu il n est pas detruit, les joueurs entrant dans sa station sont retardes.
+X->detruit 1 roquette
+Y->s etend a gauche (avec un point de vie)
+Z->inflie 2 degats (les effets de retard persistent)
+
+i2-02 Slime zone rouge bas / ACT_R / V2 V2
+--> tant qu il n est pas detruit, les joueurs entrant dans sa station sont retardes.
+X-> empeche l activation des robots de combat (s il ne sont pas deja actives)
+Y->s etend a droite (avec un point de vie)
+Z->inflie 2 degats (les effets de retard persistent)
+
+#Done
+i2-03 troupe d assaut rouge haut / ACT_R / riposte / V2 V2 #DONE
+X->change de niveau de pont
+Y->se deplace a droite
+Z->inflie 4 degats
+
+#Done
+i2-04 troupe d assaut bleu bas / ACT_R / riposte / V2 V2 #DONE
+X->change de niveau de pont
+Y->se deplace a gauche
+Z->inflie 4 degats
+
+#Done
+i2-05 virus blanche haut / ACT_C / V3 V3 #DONE
+X->draine 1 energie de chaque reacteur
+Y->tous les joueurs sur le vaisseau sont retardes
+Z->inflie 1 degats sur chaque zone
+
+#Done
+i2-06 reacteur en fusion blanche bas / ACT_B / V2 V3 #DONE
+--> la derniere action B de reparation assomme tous les joueurs presents pres des autres reacteurs
+X->inflige 1 degats par bloc energie dans cette station
+Y->consume 1 capsule de carburant
+Z->inflige 3 degats
+
