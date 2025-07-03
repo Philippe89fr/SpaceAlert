@@ -38,7 +38,7 @@ void chose_ton_blase(t_data &data)
 	bool captain(false);
     while(i <= data.nb_joueur)
     {
-		std::cout << "Joueur " << i << " choisi ton blaaazze:\n";
+		std::cout << "Joueur " << i << " choisi ton nom:\n";
         std::getline(std::cin, nom);  // Lit toute la ligne, espaces inclus
         // Protection contre nom vide
         if(nom.empty()) {
